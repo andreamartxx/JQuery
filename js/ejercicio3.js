@@ -1,21 +1,9 @@
 $(document).ready(()=>{
 
-    $("#btnRojo").change(()=>{
+    var color = $("input[name=colorRadio]");
 
-        $("#parrafo").css("color", "red");
-
-    });
-
-    $("#btnAzul").change(()=>{
-
-        $("#parrafo").css("color", "blue");
-
-    });
-
-    $("#btnVerde").change(()=>{
-
-        $("#parrafo").css("color", "green");
-
+    color.change(function(){
+        $("#parrafo").css("color", $(this).val());
     });
 
 });
