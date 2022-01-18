@@ -1,14 +1,29 @@
-$(document).ready(()=>{
+/* $(document).ready(()=>{
    
-    $("#boton").submit(()=>{
+    var form = $("#boton");
+
+    form.submit((e)=>{
+        e.preventDefault();
 
         $.get({
-            type: $("#formulario").attr('method'),
-            url: $('#formulario').attr('action'),
-            data: $('#formulario').serialize(),
-            success: function(data){alert('Datos enviados');}
+            type: form.attr('GET'),
+            url: form.attr('../Ej4/script.php'),
+            data: form.serialize(),
+            success: function (data) {
+                alert('Submission was successful.');
+            },
+            error: function (data) {
+                alert('An error occurred.');
+            }
         });
 
     });
     
+}); */
+
+$(document).ready(function () {
+    $("#boton").on("click", () => {
+    $.get( "../Ej4/script.php", $("form").serialize(), (response) => $("#contenedor").html(response))
+    .fail((request) => $("#contenedor").html(request.status));
+    });
 });
