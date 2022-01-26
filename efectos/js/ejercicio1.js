@@ -29,7 +29,7 @@ $(document).ready(()=>{
         $("img").animate({
             height: 50,
             width: 500
-          }, 2500 );
+        }, 2500 );
       
     });
 
