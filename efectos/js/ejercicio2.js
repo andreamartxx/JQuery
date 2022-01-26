@@ -8,9 +8,7 @@ $(document).ready(()=>{
 
     $("#btn1").click(()=>{
 
-        $("h1").fadeTo(2500, 0.1, ()=>{
-            alert("Hola :)");
-        });
+        $("h1").fadeTo(2500, 0.1);
 
     });
 

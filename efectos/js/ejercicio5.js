@@ -5,17 +5,17 @@ $(document).ready(()=>{
         $("p").animate({
             "font-size":"20pt",
             color: "red"
-        }, 2000, ()=>{
-            $("p").css({
-                "text-decoration": "underline"
-            }, 1500, ()=>{
-                // NO ENTRA AQUÍ
-                console.log("a");
-                $("p").animate({
-                    "font-size": "5pt"
-                }, 1900)
-            });
+        }, 2000)
+
+        $("p").queue(()=>{
+            $("p").css("text-decoration", "underline");
+            $("p").dequeue();
         });
+
+        $("p").animate({
+            "font-size":"10pt",
+            color: "green"
+        }, 2100)
         
     });
 
